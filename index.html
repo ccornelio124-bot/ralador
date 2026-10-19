@@ -18,7 +18,7 @@
     --yellow:#ffd23f;
   }
   *{box-sizing:border-box;margin:0;padding:0}
-  html{scroll-behavior:smooth;scroll-padding-top:150px}
+  html{scroll-behavior:smooth;scroll-padding-top:100px}
   body{font-family:Inter,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif;color:var(--ink);background:var(--white);line-height:1.55;-webkit-font-smoothing:antialiased;padding-bottom:76px}
   img{max-width:100%;display:block}
   a{color:inherit}
@@ -70,6 +70,9 @@
   .hero .sub{color:var(--muted);font-size:1.05rem;max-width:520px}
   .hero .sub strong{color:var(--ink)}
   .hero-actions{display:flex;flex-wrap:wrap;align-items:center;gap:18px}
+  .hero .sub.sub-hl{font-size:clamp(1.12rem,4.2vw,1.35rem);line-height:1.45;font-weight:500;color:#3a463d}
+  .hero .sub.sub-hl strong{color:var(--lime-dark);font-weight:800}
+  @media(max-width:899px){.hero .sub.sub-hl{text-align:center;margin:0 auto}}
   .hero-note{font-size:.88rem;color:var(--muted)}
   .hero-note s,.old-price s{color:#9a2a20}
   .stock{display:inline-flex;align-items:center;gap:6px;background:#fdeceb;color:#b3281d;border:1px solid #f5c3be;font-weight:800;font-size:.74rem;letter-spacing:.06em;text-transform:uppercase;padding:6px 12px;border-radius:999px}
@@ -78,7 +81,7 @@
   .old-price{font-size:1rem;color:var(--muted);margin-top:8px}
   .price-head{display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap}
   .sticky .info s{color:#9a2a20}
-  @media(max-width:899px){.hero-body{justify-items:start}}
+  @media(max-width:899px){.hero-body{justify-items:center;text-align:center}.hero-actions{justify-content:center}}
   .hero-text{display:contents}
   .hero-head{order:1}
   .hero-media{order:2;position:relative}
@@ -234,20 +237,12 @@
   </div>
 </div>
 
-<nav class="nav">
-  <div class="wrap">
-    <a href="#" class="logo"><span class="logo-mark">+</span><span>Ralador 3 em 1<span class="dot">.</span></span></a>
-    <div class="nav-links"><a href="#beneficios">Benefícios</a><a href="#como-funciona">Como funciona</a><a href="#duvidas">Dúvidas</a></div>
-    <a href="#oferta" class="btn btn-primary">Ver oferta →</a>
-  </div>
-</nav>
-
 <!-- ========== HERO: HEADLINE + VÍDEO + SUBHEADLINE ========== -->
 <header class="hero">
   <div class="wrap hero-grid">
     <div class="hero-head">
       <div class="eyebrow">Ralador Rotativo 3 em 1</div>
-      <h1>Em apenas 30 segundos sua salada fica pronta. <span class="hl">Tudo muito rápido e prático, sem dor e sofrimento!</span></h1>
+      <h1>Pare de transformar uma simples salada em trabalho pesado! <span class="hl">Fatie tudo em apenas 30 segundos.</span></h1>
     </div>
 
     <div class="hero-media">
@@ -257,11 +252,10 @@
           <vturb-smartplayer id="vid-6ad3898471ed47eeac0a4a9b" style="display: block; margin: 0 auto; width: 100%; max-width: 400px;"><div class="vturb-player-placeholder" style="position: relative; width: 100%; padding: 177.77777777777777% 0 0; z-index: 0; background-color: black;"></div></vturb-smartplayer> <script type="text/javascript"> var s=document.createElement("script"); s.src="https://scripts.converteai.net/0fe8313b-bfcb-4b1b-b6bf-55e7e0fd7572/players/6ad3898471ed47eeac0a4a9b/v4/player.js", s.async=!0,document.head.appendChild(s); </script>
         </div>
       </div>
-      <div class="float-badge"><small>Só gire a manivela</small><b>3 lâminas de aço inox fazem o trabalho por você</b></div>
     </div>
 
     <div class="hero-body">
-      <p class="sub">Esqueça o ralador comum que cansa o braço e machuca os dedos. Com o tambor rotativo, <strong>cenoura, pepino, queijo e repolho ficam prontos enquanto você só gira</strong>, sem tomada, sem esforço e sem risco de corte.</p>
+      <p class="sub sub-hl">Depois de um dia cansativo, a última coisa que você merece é perder tempo cortando legumes. <strong>Simplifique sua cozinha para sempre.</strong></p>
       <div class="hero-actions">
         <a href="#oferta" class="btn btn-primary">Quero o meu agora ↗</a>
         <a href="#como-funciona" class="btn-link">Veja como funciona</a>
