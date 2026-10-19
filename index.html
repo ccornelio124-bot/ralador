@@ -85,7 +85,7 @@
   @media(prefers-reduced-motion:reduce){.btn-pulse{animation:none}}
   /* 3 VÍDEOS */
   .clips{padding:28px 0 56px;background:var(--white)}
-  .clips-row{display:flex;gap:14px;overflow-x:auto;scroll-snap-type:x mandatory;padding:6px 2px 14px;-webkit-overflow-scrolling:touch;scrollbar-width:none}
+  .clips-row{display:flex;align-items:center;gap:14px;overflow-x:auto;scroll-snap-type:x mandatory;padding:6px 2px 14px;-webkit-overflow-scrolling:touch;scrollbar-width:none}
   .clips-row::-webkit-scrollbar{display:none}
   .clip{flex:0 0 72%;scroll-snap-align:center}
   .clip-card{background:var(--white);padding:6px;border-radius:22px;box-shadow:0 14px 36px rgba(28,58,36,.16)}
@@ -315,21 +315,21 @@
   <div class="wrap">
     <div class="clips-row">
       <div class="clip">
-        <div class="clip-card"><div class="video clip-video">
-          <!-- VÍDEO 1 (vertical 1080x1920): cole aqui o código de embed da Vturb e apague o bloco "video-placeholder" abaixo -->
-          <div class="video-placeholder"><div class="play"><svg viewBox="0 0 24 24" fill="#fff"><path d="M8 5v14l11-7z"/></svg></div>Vídeo 1</div>
+        <div class="clip-card"><div class="video clip-video has-player">
+          <!-- VÍDEO 1 (Vturb) -->
+          <vturb-smartplayer id="vid-6ad661358777d5d521d77587" style="display: block; margin: 0 auto; width: 100%; max-width: 400px;"><div class="vturb-player-placeholder" style="position: relative; width: 100%; padding: 177.82426778242677% 0 0; z-index: 0; background-color: black;"></div></vturb-smartplayer> <script type="text/javascript"> var s=document.createElement("script"); s.src="https://scripts.converteai.net/0fe8313b-bfcb-4b1b-b6bf-55e7e0fd7572/players/6ad661358777d5d521d77587/v4/player.js", s.async=!0,document.head.appendChild(s); </script>
         </div></div>
       </div>
       <div class="clip">
-        <div class="clip-card"><div class="video clip-video">
-          <!-- VÍDEO 2 (vertical 1080x1920): cole aqui o código de embed da Vturb e apague o bloco "video-placeholder" abaixo -->
-          <div class="video-placeholder"><div class="play"><svg viewBox="0 0 24 24" fill="#fff"><path d="M8 5v14l11-7z"/></svg></div>Vídeo 2</div>
+        <div class="clip-card"><div class="video clip-video has-player">
+          <!-- VÍDEO 2 (Vturb) -->
+          <vturb-smartplayer id="vid-6ad6622297658fbf91e70826" style="display: block; margin: 0 auto; width: 100%; max-width: 400px;"><div class="vturb-player-placeholder" style="position: relative; width: 100%; padding: 154.68354430379748% 0 0; z-index: 0; background-color: black;"></div></vturb-smartplayer> <script type="text/javascript"> var s=document.createElement("script"); s.src="https://scripts.converteai.net/0fe8313b-bfcb-4b1b-b6bf-55e7e0fd7572/players/6ad6622297658fbf91e70826/v4/player.js", s.async=!0,document.head.appendChild(s); </script>
         </div></div>
       </div>
       <div class="clip">
-        <div class="clip-card"><div class="video clip-video">
-          <!-- VÍDEO 3 (vertical 1080x1920): cole aqui o código de embed da Vturb e apague o bloco "video-placeholder" abaixo -->
-          <div class="video-placeholder"><div class="play"><svg viewBox="0 0 24 24" fill="#fff"><path d="M8 5v14l11-7z"/></svg></div>Vídeo 3</div>
+        <div class="clip-card"><div class="video clip-video has-player">
+          <!-- VÍDEO 3 (Vturb) -->
+          <vturb-smartplayer id="vid-6ad662e147a8f648c9721e09" style="display: block; margin: 0 auto; width: 100%; max-width: 400px;"><div class="vturb-player-placeholder" style="position: relative; width: 100%; padding: 179.32489451476795% 0 0; z-index: 0; background-color: black;"></div></vturb-smartplayer> <script type="text/javascript"> var s=document.createElement("script"); s.src="https://scripts.converteai.net/0fe8313b-bfcb-4b1b-b6bf-55e7e0fd7572/players/6ad662e147a8f648c9721e09/v4/player.js", s.async=!0,document.head.appendChild(s); </script>
         </div></div>
       </div>
     </div>
