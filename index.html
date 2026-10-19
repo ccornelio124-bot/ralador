@@ -5,6 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Ralador Rotativo 3 em 1 | Pague só na entrega</title>
 <meta name="description" content="Rale e fatie legumes em segundos girando uma manivela, sem dor no braço e sem encostar a mão na lâmina. Pague só na entrega.">
+<link rel="preconnect" href="https://scripts.converteai.net">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -75,7 +76,8 @@
   .hero-media{display:flex;flex-direction:column;align-items:center}
   .video{position:relative;width:100%;aspect-ratio:9/16;border-radius:20px;overflow:hidden;background:var(--forest)}
   .video iframe,.video video{position:absolute;inset:0;width:100%;height:100%;border:0}
-  .video vturb-smartplayer{display:block;width:100%!important;height:100%!important}
+  .video.has-player{aspect-ratio:auto;background:#000}
+  .video vturb-smartplayer{display:block;width:100%!important;max-width:none!important}
   .video-placeholder{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;color:#cfe2c3;font-size:.88rem;text-align:center;padding:16px}
   .play{width:64px;height:64px;border-radius:50%;background:var(--lime);display:grid;place-items:center;box-shadow:0 0 0 10px rgba(107,165,47,.25)}
   .play svg{width:26px;height:26px;margin-left:4px}
@@ -223,12 +225,9 @@
 
     <div class="hero-media">
       <div class="video-card">
-        <div class="video">
-          <!-- VÍDEO VERTICAL 9:16 (VTURB): cole aqui o código de embed e apague o bloco "video-placeholder" abaixo -->
-          <div class="video-placeholder">
-            <div class="play"><svg viewBox="0 0 24 24" fill="#fff"><path d="M8 5v14l11-7z"/></svg></div>
-            Seu vídeo vertical<br>vai aparecer aqui
-          </div>
+        <div class="video has-player">
+          <!-- VÍDEO VTURB (vertical 9:16) -->
+          <vturb-smartplayer id="vid-6ad3898471ed47eeac0a4a9b" style="display: block; margin: 0 auto; width: 100%; max-width: 400px;"><div class="vturb-player-placeholder" style="position: relative; width: 100%; padding: 177.77777777777777% 0 0; z-index: 0; background-color: black;"></div></vturb-smartplayer> <script type="text/javascript"> var s=document.createElement("script"); s.src="https://scripts.converteai.net/0fe8313b-bfcb-4b1b-b6bf-55e7e0fd7572/players/6ad3898471ed47eeac0a4a9b/v4/player.js", s.async=!0,document.head.appendChild(s); </script>
         </div>
       </div>
       <div class="float-badge"><small>Só gire a manivela</small><b>3 lâminas de aço inox fazem o trabalho por você</b></div>
