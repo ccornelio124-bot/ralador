@@ -18,7 +18,7 @@
     --yellow:#ffd23f;
   }
   *{box-sizing:border-box;margin:0;padding:0}
-  html{scroll-behavior:smooth}
+  html{scroll-behavior:smooth;scroll-padding-top:150px}
   body{font-family:Inter,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif;color:var(--ink);background:var(--white);line-height:1.55;-webkit-font-smoothing:antialiased;padding-bottom:76px}
   img{max-width:100%;display:block}
   a{color:inherit}
@@ -42,7 +42,17 @@
   /* TOPO */
   .announce{background:var(--forest);color:#dfe9d8;text-align:center;font-size:.72rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;padding:9px 16px}
   .announce b{color:var(--yellow)}
-  .nav{position:sticky;top:0;z-index:20;background:rgba(255,255,255,.94);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+  .topfix{position:sticky;top:0;z-index:40;box-shadow:0 3px 12px rgba(0,0,0,.18)}
+  .timer-bar{background:#c62f22;color:#fff;text-align:center;padding:8px 12px;display:flex;align-items:center;justify-content:center;gap:10px;flex-wrap:wrap;font-weight:700;font-size:.8rem;letter-spacing:.04em;text-transform:uppercase}
+  .timer-bar .clock{display:inline-flex;gap:4px;align-items:center;font-variant-numeric:tabular-nums}
+  .timer-bar .clock span{background:#fff;color:#c62f22;border-radius:6px;padding:3px 7px;font-size:1rem;font-weight:800;min-width:34px}
+  .timer-bar .clock i{font-style:normal;font-size:1rem}
+  .topfix.done .clock span{background:#ffd23f;color:#16241a}
+  .cod-bar{background:var(--yellow);color:var(--ink);display:flex;align-items:center;justify-content:center;gap:8px;padding:7px 12px;font-size:.85rem;text-align:center}
+  .cod-bar svg{width:18px;height:18px;flex:0 0 18px}
+  .cod-bar b{text-transform:uppercase;letter-spacing:.03em;font-weight:800}
+  @media(max-width:899px){.hero-head{text-align:center}.hero-head .eyebrow{justify-content:center}}
+  .nav{position:sticky;top:var(--bar-h,58px);z-index:20;background:rgba(255,255,255,.94);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
   .nav .wrap{display:flex;align-items:center;justify-content:space-between;height:62px}
   .logo{display:flex;align-items:center;gap:8px;font-weight:800;font-size:1.05rem;text-decoration:none;letter-spacing:-.02em}
   .logo-mark{width:28px;height:28px;border-radius:8px;background:var(--lime);display:grid;place-items:center;color:#fff;font-weight:800}
@@ -60,7 +70,15 @@
   .hero .sub{color:var(--muted);font-size:1.05rem;max-width:520px}
   .hero .sub strong{color:var(--ink)}
   .hero-actions{display:flex;flex-wrap:wrap;align-items:center;gap:18px}
-  .hero-note{font-size:.82rem;color:var(--muted)}
+  .hero-note{font-size:.88rem;color:var(--muted)}
+  .hero-note s,.old-price s{color:#9a2a20}
+  .stock{display:inline-flex;align-items:center;gap:6px;background:#fdeceb;color:#b3281d;border:1px solid #f5c3be;font-weight:800;font-size:.74rem;letter-spacing:.06em;text-transform:uppercase;padding:6px 12px;border-radius:999px}
+  .stock::before{content:"";width:8px;height:8px;border-radius:50%;background:#d93a2b;animation:pulse 1.2s infinite}
+  @keyframes pulse{0%,100%{opacity:1}50%{opacity:.25}}
+  .old-price{font-size:1rem;color:var(--muted);margin-top:8px}
+  .price-head{display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap}
+  .sticky .info s{color:#9a2a20}
+  @media(max-width:899px){.hero-body{justify-items:start}}
   .hero-text{display:contents}
   .hero-head{order:1}
   .hero-media{order:2;position:relative}
@@ -205,7 +223,16 @@
 </head>
 <body>
 
-<div class="announce">🚚 <b>Pague só na entrega</b> · Receba em casa e pague quando chegar</div>
+<div class="topfix" id="timerBar">
+  <div class="timer-bar">
+    <span id="timerLabel">Oferta especial termina em:</span>
+    <span class="clock"><span id="tMin">05</span><i>:</i><span id="tSec">00</span></span>
+  </div>
+  <div class="cod-bar">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="1" y="3" width="15" height="13"/><path d="M16 8h4l3 3v5h-7V8z"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>
+    <span><b>Pague só na entrega</b> · Sem risco para você</span>
+  </div>
+</div>
 
 <nav class="nav">
   <div class="wrap">
@@ -239,7 +266,8 @@
         <a href="#oferta" class="btn btn-primary">Quero o meu agora ↗</a>
         <a href="#como-funciona" class="btn-link">Veja como funciona</a>
       </div>
-      <p class="hero-note">12x de R$ 14,50 · Você só paga quando receber em casa.</p>
+      <span class="stock">Últimas unidades</span>
+      <p class="hero-note"><s>De R$ 499,00</s> por <b>12x de R$ 14,50</b> · Você só paga quando receber em casa.</p>
     </div>
   </div>
 </header>
@@ -340,7 +368,7 @@
           <li><svg viewBox="0 0 24 24" fill="none" stroke="#6ba52f" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5L20 7"/></svg>100% manual, sem tomada</li>
           <li><svg viewBox="0 0 24 24" fill="none" stroke="#6ba52f" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5L20 7"/></svg>Desmonta inteiro para lavar</li>
         </ul>
-        <div class="price-box"><small>Preço especial</small><div class="p">12x R$ 14,50</div></div>
+        <div class="price-box"><div class="price-head"><small>Preço especial</small><span class="stock">Últimas unidades</span></div><div class="old-price"><s>De R$ 499,00</s> por</div><div class="p">12x R$ 14,50</div></div>
         <a href="#LINK-DO-PEDIDO" class="btn btn-primary btn-lg">Quero o meu agora →</a>
         <div class="cod-note">🚚 Você só paga quando receber em casa</div>
         <div class="seals">
@@ -384,9 +412,39 @@
 </footer>
 
 <div class="sticky">
-  <div class="info"><b>12x R$ 14,50</b>Pague na entrega</div>
+  <div class="info"><s>R$ 499,00</s><b>12x R$ 14,50</b>Últimas unidades</div>
   <a href="#LINK-DO-PEDIDO" class="btn btn-primary">Quero o meu</a>
 </div>
 
+<script>
+(function(){
+  var DURATION = 5 * 60 * 1000; // 5 minutos
+  var KEY = 'ralador_timer_fim';
+  var bar = document.getElementById('timerBar');
+  var mEl = document.getElementById('tMin'), sEl = document.getElementById('tSec');
+  // ajusta o menu para ficar logo abaixo da barra fixa
+  function setBarHeight(){ document.documentElement.style.setProperty('--bar-h', bar.offsetHeight + 'px'); }
+  setBarHeight(); window.addEventListener('resize', setBarHeight);
+  // guarda o horário final para o contador não reiniciar ao recarregar a página
+  var end = null;
+  try { end = parseInt(localStorage.getItem(KEY), 10); } catch(e) {}
+  if (!end || isNaN(end)) {
+    end = Date.now() + DURATION;
+    try { localStorage.setItem(KEY, String(end)); } catch(e) {}
+  }
+  function pad(n){ return (n < 10 ? '0' : '') + n; }
+  function tick(){
+    var left = Math.max(0, end - Date.now());
+    var m = Math.floor(left / 60000), s = Math.floor((left % 60000) / 1000);
+    mEl.textContent = pad(m); sEl.textContent = pad(s);
+    if (left <= 0) {
+      bar.classList.add('done');
+      document.getElementById('timerLabel').textContent = 'O tempo acabou, mas ainda dá para pedir:';
+      clearInterval(timer);
+    }
+  }
+  var timer = setInterval(tick, 1000); tick();
+})();
+</script>
 </body>
 </html>
