@@ -131,6 +131,8 @@
   .statement{background:var(--forest);color:#fff;text-align:center;padding:64px 0}
   .statement h2{font-size:clamp(1.6rem,4.6vw,2.4rem);max-width:820px;margin:0 auto}
   .statement .hl{color:var(--lime-text)}
+  .statement-sub{margin:18px auto 0;max-width:620px;font-size:clamp(1rem,3.6vw,1.2rem);font-weight:600;color:#cfe2c3;line-height:1.4}
+  .statement-sub::after{content:"↓";display:block;margin-top:10px;font-size:1.4rem;color:var(--lime-text)}
 
   /* COD */
   .cod{display:flex;gap:18px;align-items:center;background:var(--white);border:2px solid var(--lime);border-radius:20px;padding:24px;box-shadow:0 14px 40px rgba(28,58,36,.08)}
@@ -266,11 +268,10 @@
   </div>
 </header>
 
-<div class="strip">
+<div class="statement">
   <div class="wrap">
-    <div><span>✓</span>Pague só na entrega</div>
-    <div><span>✓</span>3 lâminas em 1</div>
-    <div><span>✓</span>Mão longe da lâmina</div>
+    <h2>Chega de cansar as mãos e os braços <span class="hl">preparando uma simples salada!</span></h2>
+    <p class="statement-sub">Veja como nossas clientes estão preparando suas refeições em apenas alguns segundos</p>
   </div>
 </div>
 
@@ -287,10 +288,6 @@
     </div>
   </div>
 </section>
-
-<div class="statement">
-  <div class="wrap"><h2>Você não precisa sofrer para colocar <span class="hl">comida de verdade na mesa.</span></h2></div>
-</div>
 
 <!-- ========== BANNER PAGAMENTO NA ENTREGA ========== -->
 <div class="wrap" style="padding-top:56px">
