@@ -2,6 +2,15 @@
 <html lang="pt-BR">
 <head>
 <meta charset="utf-8">
+<!-- ========== TAG DO GOOGLE (gtag.js) ==========
+     Troque AW-XXXXXXXXXX pelo ID da sua conta do Google Ads (nas 2 linhas abaixo). -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=AW-XXXXXXXXXX"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'AW-XXXXXXXXXX');
+</script>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Ralador Rotativo 3 em 1 | Pague só na entrega</title>
 <meta name="description" content="Rale e fatie legumes em segundos girando uma manivela, sem dor no braço e sem encostar a mão na lâmina. Pague só na entrega.">
@@ -197,6 +206,22 @@
   .print figcaption{display:flex;justify-content:space-between;align-items:center;font-weight:700;font-size:.92rem;padding:10px 6px 0}
   .print figcaption span{color:#f5a623;letter-spacing:1px;font-size:.85rem}
   @media(min-width:900px){.print{flex-basis:300px}}
+  /* RODAPÉ COM TERMOS */
+  .foot-legal{display:flex;justify-content:center;align-items:center;gap:10px;flex-wrap:wrap;color:#9fb29a}
+  footer{padding:22px 0 !important}
+  .foot-cnpj{width:100%;text-align:center;font-size:.8rem;color:#9fb29a;margin-top:2px}
+  .legal-link{background:none;border:0;color:#e6efe0;font:inherit;font-size:.86rem;text-decoration:underline;text-underline-offset:3px;cursor:pointer;padding:6px 2px}
+  .legal-link:hover{color:#fff}
+  /* JANELAS DOS TERMOS */
+  .legal-dlg{margin:auto;width:min(720px,calc(100% - 24px));max-height:calc(100% - 48px);padding:0;border:0;border-radius:18px;box-shadow:0 30px 80px rgba(0,0,0,.35);color:var(--ink)}
+  .legal-dlg::backdrop{background:rgba(16,28,20,.6)}
+  .legal-head{position:sticky;top:0;background:#fff;display:flex;justify-content:space-between;align-items:center;gap:12px;padding:18px 20px;border-bottom:1px solid var(--line)}
+  .legal-head h2{font-size:1.3rem;font-weight:800;letter-spacing:-.02em}
+  .legal-close{flex:0 0 36px;height:36px;border-radius:50%;border:1px solid var(--line);background:var(--cream);font-size:1rem;cursor:pointer;color:var(--ink)}
+  .legal-body{padding:18px 20px 26px;font-size:.92rem;line-height:1.6;color:#3a463d}
+  .legal-body h3{font-size:1rem;font-weight:700;color:var(--ink);margin:18px 0 6px;letter-spacing:-.01em}
+  .legal-body p{margin:0 0 8px}
+  .legal-upd{font-size:.8rem;color:var(--muted)}
   /* BENEFÍCIOS */
   .benefits{background:var(--cream)}
   .split{display:grid;gap:40px;align-items:center}
@@ -483,14 +508,91 @@
 </section>
 
 <footer>
-  <div class="wrap">
-    <div class="foot">
-      <div><h4>Ralador Rotativo 3 em 1</h4><p>Rale e fatie seus legumes em segundos, sem dor no braço e sem cortes. Pague só na entrega.</p></div>
-      <div><h4>Atendimento</h4><p>[Razão social · CNPJ]<br>[WhatsApp / e-mail de atendimento]</p><p style="margin-top:8px"><a href="#duvidas">Dúvidas</a> · <a href="#oferta">Produto e preço</a></p></div>
-    </div>
-    <div class="foot-bottom">© Ralador Rotativo 3 em 1 · Todos os direitos reservados.</div>
+  <div class="wrap foot-legal">
+    <button type="button" class="legal-link" data-open="dlgTermos">Termos de Uso</button>
+    <span aria-hidden="true">·</span>
+    <button type="button" class="legal-link" data-open="dlgPrivacidade">Política de Privacidade</button>
+    <p class="foot-cnpj">CNPJ: 47.371.618/0001-21</p>
   </div>
 </footer>
+
+<!-- ========== TERMOS DE USO ========== -->
+<dialog id="dlgTermos" class="legal-dlg" aria-labelledby="ttlTermos">
+  <div class="legal-head"><h2 id="ttlTermos">Termos de Uso</h2><button type="button" class="legal-close" data-close aria-label="Fechar">✕</button></div>
+  <div class="legal-body">
+    <p class="legal-upd">Última atualização: 20 de outubro de 2026</p>
+    <p>Estes Termos de Uso regulam o acesso a este site e a compra do Ralador Rotativo 3 em 1, oferecido por esta loja ("nós"). Ao navegar neste site ou fazer um pedido, você declara que leu e concorda com estes Termos.</p>
+
+    <h3>1. Sobre o produto</h3>
+    <p>As fotos, vídeos e descrições servem para apresentar o produto da forma mais fiel possível. Pequenas variações de cor, embalagem ou acabamento podem ocorrer conforme o lote do fabricante, sem alterar o funcionamento.</p>
+
+    <h3>2. Preço e forma de pagamento</h3>
+    <p>Os preços exibidos são válidos enquanto a oferta estiver no ar e podem ser alterados sem aviso prévio, sem afetar pedidos já confirmados. Nesta oferta, o pagamento é feito <b>no momento da entrega</b>, diretamente ao entregador, nas formas aceitas e informadas na finalização do pedido.</p>
+
+    <h3>3. Pedido e confirmação</h3>
+    <p>Ao finalizar o pedido, você se compromete a informar dados verdadeiros e completos (nome, telefone e endereço). Podemos entrar em contato para confirmar o pedido. Pedidos com dados incorretos, incompletos ou com indícios de fraude podem ser cancelados.</p>
+
+    <h3>4. Entrega</h3>
+    <p>O prazo de entrega é informado na finalização do pedido e pode variar conforme a região. Caso não haja ninguém para receber, ou o pagamento não seja feito na entrega, o pedido poderá ser cancelado e o produto devolvido ao remetente.</p>
+
+    <h3>5. Direito de arrependimento e garantia</h3>
+    <p>Conforme o artigo 49 do Código de Defesa do Consumidor, você pode desistir da compra em até 7 dias corridos a partir do recebimento. Além disso, oferecemos <b>garantia de satisfação de 30 dias</b> a partir do recebimento: se não ficar satisfeito, entre em contato pelos nossos canais de atendimento para solicitar a devolução e o reembolso do valor pago. O produto deve ser devolvido com todos os itens e acessórios. Defeitos de fabricação seguem a garantia legal prevista no Código de Defesa do Consumidor.</p>
+
+    <h3>6. Uso correto</h3>
+    <p>O ralador possui lâminas cortantes. Use sempre o pressionador, siga as instruções do fabricante e mantenha o produto fora do alcance de crianças. Não nos responsabilizamos por danos causados por uso inadequado.</p>
+
+    <h3>7. Propriedade intelectual</h3>
+    <p>Os textos, imagens, vídeos e o layout deste site não podem ser copiados ou reproduzidos sem autorização.</p>
+
+    <h3>8. Alterações destes Termos</h3>
+    <p>Podemos atualizar estes Termos a qualquer momento. A versão válida é sempre a publicada nesta página.</p>
+
+    <h3>9. Lei aplicável e foro</h3>
+    <p>Estes Termos seguem as leis brasileiras. Fica eleito o foro do domicílio do consumidor para resolver qualquer questão.</p>
+
+    <h3>10. Contato</h3>
+    <p>Para dúvidas, trocas ou devoluções, fale com a gente pelos canais de atendimento informados na confirmação do seu pedido.</p>
+  </div>
+</dialog>
+
+<!-- ========== POLÍTICA DE PRIVACIDADE ========== -->
+<dialog id="dlgPrivacidade" class="legal-dlg" aria-labelledby="ttlPriv">
+  <div class="legal-head"><h2 id="ttlPriv">Política de Privacidade</h2><button type="button" class="legal-close" data-close aria-label="Fechar">✕</button></div>
+  <div class="legal-body">
+    <p class="legal-upd">Última atualização: 20 de outubro de 2026</p>
+    <p>Esta Política explica como coletamos, usamos e protegemos os seus dados pessoais, de acordo com a Lei Geral de Proteção de Dados (Lei nº 13.709/2018 – LGPD).</p>
+
+    <h3>1. Quais dados coletamos</h3>
+    <p><b>Dados que você informa:</b> nome, telefone/WhatsApp, e-mail, endereço de entrega e CPF, quando necessário para emissão de nota fiscal ou entrega.<br><b>Dados de navegação:</b> endereço IP, tipo de dispositivo e navegador, páginas visitadas e interações com o site, coletados por cookies e tecnologias semelhantes.</p>
+
+    <h3>2. Para que usamos os dados</h3>
+    <p>Para processar e entregar o seu pedido; entrar em contato sobre o pedido e o atendimento; emitir nota fiscal e cumprir obrigações legais; prevenir fraudes; medir o desempenho do site e dos anúncios; e, se você permitir, enviar ofertas.</p>
+
+    <h3>3. Bases legais</h3>
+    <p>Tratamos seus dados para a execução do contrato de compra, para cumprir obrigações legais, com base em nosso legítimo interesse (como segurança e melhoria do site) e, quando necessário, com o seu consentimento.</p>
+
+    <h3>4. Com quem compartilhamos</h3>
+    <p>Compartilhamos apenas o necessário com: transportadoras e parceiros de entrega; a plataforma de pedidos e checkout; provedores de hospedagem do site e de vídeos; e ferramentas de anúncios e análise (como Google/YouTube e Meta). Não vendemos seus dados pessoais.</p>
+
+    <h3>5. Cookies e pixels</h3>
+    <p>Usamos cookies e pixels de anúncios para entender como o site é usado e mostrar anúncios mais relevantes. Você pode bloquear ou apagar cookies nas configurações do seu navegador. Algumas funções do site podem ser afetadas.</p>
+
+    <h3>6. Por quanto tempo guardamos</h3>
+    <p>Guardamos os dados pelo tempo necessário para cumprir as finalidades acima e as obrigações legais, como as fiscais. Depois disso, eles são excluídos ou anonimizados.</p>
+
+    <h3>7. Seus direitos</h3>
+    <p>Você pode, a qualquer momento, pedir: confirmação de que tratamos seus dados; acesso; correção; anonimização, bloqueio ou exclusão; portabilidade; informações sobre compartilhamento; e revogação do consentimento. Basta entrar em contato pelos nossos canais de atendimento.</p>
+
+    <h3>8. Segurança</h3>
+    <p>Adotamos medidas técnicas e administrativas para proteger seus dados contra acesso não autorizado, perda ou uso indevido.</p>
+
+    <h3>9. Alterações desta Política</h3>
+    <p>Esta Política pode ser atualizada. A versão válida é sempre a publicada nesta página.</p>
+
+    <h3>10. Contato</h3>
+    <p>Para dúvidas ou pedidos sobre os seus dados, fale com a gente pelos canais de atendimento informados na confirmação do seu pedido.</p>
+  </div>
+</dialog>
 
 <div class="sticky">
   <div class="info"><s>R$ 319,00</s><b>12x R$ 14,50</b>Últimas unidades</div>
@@ -526,6 +628,13 @@
   }
   var timer = setInterval(tick, 1000); tick();
 })();
+</script>
+<script>
+document.querySelectorAll('[data-open]').forEach(function(b){b.addEventListener('click',function(){var d=document.getElementById(b.getAttribute('data-open'));if(d&&d.showModal){d.showModal();}});});
+document.querySelectorAll('.legal-dlg').forEach(function(d){
+  d.querySelector('[data-close]').addEventListener('click',function(){d.close();});
+  d.addEventListener('click',function(e){if(e.target===d)d.close();});
+});
 </script>
 </body>
 </html>
